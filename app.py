@@ -84,26 +84,26 @@ try:
         # Fallback: simple threshold-based recognition
         st.write("## Using fallback recognition")
         # Simple heuristic based on pixel intensity
-79             st.write(f"Digit {i}: {prob:.2%}")
-80         else:
-81             # Fallback: simple threshold-based recognition
-82             st.write("## Using fallback recognition")
-83             # Simple heuristic based on pixel intensity
-84             digit_guess = np.argmax(np.sum(img_array.reshape(8, 8), axis=0)) % 10
-85             st.write(f"Estimated digit: **{digit_guess}**")
-86 
-87     except Exception as e:
-88         st.error(f"Error processing image: {e}")
-89 
-90 # Instructions
-91 st.sidebar.header("Instructions")
-92 st.sidebar.write("""
-93 1. Upload an image of a handwritten digit (0-9)
-94 2. The image will be resized to 8x8 pixels
-95 3. AI model will predict the digit
-96 4. For best results:
-97     - White background
-98     - Black digit
-99     - Centered digit
-100     - Minimal noise
-101 """)
+             st.write(f"Digit {i}: {prob:.2%}")
+         else:
+             # Fallback: simple threshold-based recognition
+             st.write("## Using fallback recognition")
+             # Simple heuristic based on pixel intensity
+             digit_guess = np.argmax(np.sum(img_array.reshape(8, 8), axis=0)) % 10
+             st.write(f"Estimated digit: **{digit_guess}**")
+ 
+     except Exception as e:
+         st.error(f"Error processing image: {e}")
+ 
+ # Instructions
+ st.sidebar.header("Instructions")
+ st.sidebar.write("""
+ 1. Upload an image of a handwritten digit (0-9)
+ 2. The image will be resized to 8x8 pixels
+ 3. AI model will predict the digit
+ 4. For best results:
+     - White background
+     - Black digit
+     - Centered digit
+     - Minimal noise
+ """)
